@@ -1,0 +1,57 @@
+/* .navi {
+    width: 70%;
+    height: 70px;
+    background-color: rgba(0, 33, 71, 0.8);
+    margin: 0 auto;
+    border-bottom-left-radius: 20px; 
+    border-bottom-right-radius: 20px;
+    justify-content: center;
+    display: flex;
+    align-items: center; 
+  }
+  
+  .main_icon {
+    margin-top: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .headText{
+    color: #87CEEB;
+    margin-left: 20px;
+    font-size: 30px; 
+    font-weight: bold;
+    margin-top: auto; 
+    margin-bottom: auto;
+  } */
+
+  .navi {
+    width: 65%;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.8); /* Почти черный полупрозрачный цвет */
+    margin: 0 auto;
+    border-bottom-left-radius: 20px; /* Округление только нижних углов */
+    border-bottom-right-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Тень для придания объема */
+    padding: 0 20px; /* Отступы по бокам */
+    gap: 20px; /* Расстояние между элементами */
+}
+
+.main_icon {
+    width: 40px;
+    height: 40px;
+    /* Убрали border-radius для квадратной иконки */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Легкая тень для иконки */
+}
+
+.headText {
+    color: #e3e3e3; /* Светло-серый цвет для текста */
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
