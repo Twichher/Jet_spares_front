@@ -1,4 +1,4 @@
-###FRONT PART FOR RIP LABS###
+FRONT PART FOR RIP LABS
 
 lr1 = https://github.com/Twichher/RIP_labs/tree/SSR  
 lr2 = https://github.com/Twichher/RIP_labs/tree/DB  
