@@ -25,12 +25,13 @@ export const MainPageSpares = () => {
         getSpareByPrice(price_by, price_up).then((test) => {
             SetSpare(test.Spares);
         });
-      }, [price_by, price_up] )
+      }, [] )
 
     const onSubmitFinderHandler = () => {
 
-        SBV('')
-        SUV('')
+        getSpareByPrice(price_by, price_up).then((test) => {
+            SetSpare(test.Spares);
+        });
 
     }
 

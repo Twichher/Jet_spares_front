@@ -22,7 +22,7 @@ const FinderItem: FC<Props> = ({ value_by, value_up, setValueby, setValueup, onS
         <input name="price_up" placeholder="Цена до" type="number" className="input_sort_up"
             value={value_up}
             onChange={(event => setValueup(event.target.value))}/>
-        <button type="submit" className="sort_btn" onClick={onSubmit}>Очистить</button>
+        <button type="submit" className="sort_btn" onClick={onSubmit}>Найти</button>
 
     </div>
 )

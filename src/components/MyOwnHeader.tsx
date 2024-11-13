@@ -7,18 +7,25 @@ export const MyOwnHeader : FC = () => {
 
     return (
 
+    <nav className="mainDiv">
+
         <div className="navi">
 
-            {/* <a onClick={onClickHandler}>
-                <img className="main_icon" src="main_icon.png"/>
-            </a> */}
+            <Link to={ROUTES.HOME}>
+                <img className="home_icon" src="../home_icon.png" />
+            </Link>
 
             <Link to={ROUTES.SPARES}>
-                <img className="main_icon" src="../main_icon.png"/>
+                <img className="main_icon" src="../spares_icon.png" />
             </Link>
-            <p className="headText">Мировые запчасти</p>
 
         </div>
+
+        <div className="title">
+            <p className="headText">Мировые запчасти</p>
+        </div>
+
+    </nav>
 
     )
 }

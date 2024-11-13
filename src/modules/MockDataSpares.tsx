@@ -20,7 +20,7 @@ export const MOCK_DATA_SPARES : ApiResponse = {
             name_spare : "Регулятор двигателя HOBBYWING",
             description_spare : "Регулятор скорости для бесколлекторных многополюсных двигателей, предназначен для мультикоптеров.",
             status_spare : 0, 
-            url_spare : "regul.png",
+            // url_spare : "regul.png",
             price_spare : 5240
     
         },
