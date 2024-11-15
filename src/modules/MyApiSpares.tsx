@@ -14,7 +14,7 @@ export const getSpareByPrice = async (
 
     try {
 
-      const response = await fetch(`/api/spares/list/?price_by=${Number(price_by_value)}&price_up=${Number(price_up_value)}`);
+      const response = await fetch(`http://109.252.65.250:8000/spares/list/?price_by=${Number(price_by_value)}&price_up=${Number(price_up_value)}`);
       return await response.json();
     } 
     catch(error) {
@@ -33,7 +33,7 @@ export const getSpareByID = async (
   Promise<MySpares> => {
 
     try {
-      const response = await fetch(`/api/spares/${id_spare}/info/`);
+      const response = await fetch(`http://109.252.65.250:8000/spares/${id_spare}/info/`);
       return await response.json();
     } 
     catch(error) {
