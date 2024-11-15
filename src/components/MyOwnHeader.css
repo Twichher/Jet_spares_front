@@ -1,0 +1,49 @@
+.mainDiv {
+  width: 65%;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.8); 
+  margin: 0 auto;
+  border-bottom-left-radius: 20px; 
+  border-bottom-right-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); 
+  padding: 0 20px;
+  position: relative; 
+}
+
+.navi {
+  display: flex;
+  gap: 20px;
+  position: absolute; 
+  left: 20px; 
+  top: 50%; 
+  transform: translateY(-50%);
+}
+
+/* .main_icon, .home_icon {
+  width: 40px;
+  height: 40px;
+} */
+
+.main_icon, .home_icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main_icon:hover, .home_icon:hover {
+  transform: scale(1.1); /* Увеличение на 10% при наведении */
+}
+
+.headText {
+  color: #e3e3e3;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+
+

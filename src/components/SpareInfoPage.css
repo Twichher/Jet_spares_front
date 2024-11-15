@@ -1,0 +1,67 @@
+
+  .descce_div {
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный темный фон */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+    color: #e3e3e3;
+}
+
+.name_spare_div {
+    display: flex;
+    justify-content: center;
+}
+
+.name_spare {
+    color: #e3e3e3;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pic_spare_div {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.pic_spare {
+    width: 250px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.price_spare_div {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.price_spare {
+    color: #ff6b6b; /* Яркий красный для цены */
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.desc_spare_div {
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.desc_spare {
+    font-size: 25px;
+    color: #c0c0c0;
+    line-height: 1.6;
+}
+
+  
+  .MP_breadcrumbs{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+  }

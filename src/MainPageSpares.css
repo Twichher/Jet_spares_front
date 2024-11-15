@@ -1,0 +1,36 @@
+
+
+  .MP_breadcrumbs{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .MP_Finder {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .space{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+  
+  .container{
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px 25px;
+    margin-top: 20px;
+  }
+
+  .space{
+    width: 70%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
