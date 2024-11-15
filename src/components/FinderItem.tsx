@@ -9,22 +9,36 @@ interface Props {
     onSubmit: () => void
 }
 
-const FinderItem: FC<Props> = ({ value_by, value_up, setValueby, setValueup, onSubmit}) => (
+function getRandomFloat () {
+    return (Math.random() * 100).toFixed(0)
+}
 
-    <div className="sort_by_price_div">
 
 
-        <p className="price_by_text">Поиск по цене: от</p>
-        <input name="price_by" placeholder="Цена от" type="number" className="input_sort_by"
-            value={value_by}
-            onChange={(event => setValueby(event.target.value))}/>
-        <p className="price_up_text">до</p>
-        <input name="price_up" placeholder="Цена до" type="number" className="input_sort_up"
-            value={value_up}
-            onChange={(event => setValueup(event.target.value))}/>
-        <button type="submit" className="sort_btn" onClick={onSubmit}>Найти</button>
+const FinderItem: FC<Props> = ({ value_by, value_up, setValueby, setValueup, onSubmit}) => {
 
-    </div>
-)
+    const rgba_text = `rgba(${getRandomFloat()}, ${getRandomFloat()}, ${getRandomFloat()}, 0.9)`
+
+    return(
+
+        <div className="sort_by_price_div" >
+
+
+            <p className="price_by_text">Поиск по цене: от</p>
+            <input name="price_by" placeholder="Цена от" type="number" className="input_sort_by"
+                value={value_by}
+                onChange={(event => setValueby(event.target.value))}/>
+            <p className="price_up_text">до</p>
+            <input name="price_up" placeholder="Цена до" type="number" className="input_sort_up"
+                value={value_up}
+                onChange={(event => setValueup(event.target.value))}/>
+            <button type="submit" className="sort_btn" onClick={onSubmit} style={{ backgroundColor : rgba_text }}>Найти</button>
+
+        </div>
+
+    )
+}
 
 export default FinderItem
+
+

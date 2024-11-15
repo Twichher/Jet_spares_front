@@ -134,7 +134,7 @@ input::-webkit-inner-spin-button {
     width: 150px;
     height: 40px;
     border-radius: 20px;
-    background-color: rgba(0, 33, 71, 0.9); /* Полупрозрачный темный цвет */
+    background-color: rgba(0, 33, 71, 0.9); 
     outline: none;
     border: none;
     color: #87CEEB;
