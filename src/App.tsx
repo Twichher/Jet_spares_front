@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter future={{
       v7_startTransition: true,
       v7_relativeSplatPath: true,
-    }} >
+    }} basename="/Jet_spares_front">
     <Routes>
       <Route path={ROUTES.HOME} index element={<WelcomePage />} />
       <Route path={ROUTES.SPARES} element={<MainPageSpares />} />

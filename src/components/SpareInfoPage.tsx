@@ -3,7 +3,7 @@ import { BreadCrumbs } from "./BreadCrumbs"
 import { ROUTE_LABELS, ROUTES } from "../modules/MyRoutes"
 import { getSpareByID } from "../modules/MyApiSpares"
 import { MySpares } from "../modules/MyInterface"
-import { Link, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { MyOwnHeader } from "./MyOwnHeader"
 import "./SpareInfoPage.css"
 
