@@ -8,10 +8,16 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      "/api": { 
-        target: "http://localhost:8000",
+      "/Jet_spares_front/api": { 
+        // target: "http://localhost:8000",
+        target: "https://breezy-hornets-create.loca.lt",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, "/"),
+        rewrite: (path) => path.replace(/^\/Jet_spares_front\/api/, "/"),
+      },
+      "/Jet_spares_front/spares/api": {
+        target: "https://breezy-hornets-create.loca.lt",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/Jet_spares_front\/spares\/api/, "/"),
       },
     }
   }

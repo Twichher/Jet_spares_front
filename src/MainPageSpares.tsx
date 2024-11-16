@@ -24,6 +24,7 @@ export const MainPageSpares = () => {
         getSpareByPrice(price_by, price_up).then((test) => {
             SetSpare(test.Spares);
         });
+        console.log(spares)
       }, [] )
 
     const onSubmitFinderHandler = () => {

@@ -10,13 +10,21 @@ export const getSpareByPrice = async (
   Promise<ApiResponse> => {
 
     if (price_by_value === '') price_by_value = '0'
-    if (price_up_value === '') price_up_value = '10000000'
-
+    if (price_up_value === '') price_up_value = '10000002'
+//tsc -b && vite build
     try {
 
       // const response = await fetch(`/api/spares/list/?price_by=${Number(price_by_value)}&price_up=${Number(price_up_value)}`);
-      const response = await fetch(`http://localhost:8000/spares/list/?price_by=${Number(price_by_value)}&price_up=${Number(price_up_value)}`);
-      return await response.json();
+      //https://better-worlds-dance.loca.lt/spares/list/?price_by=0&price_up=100000000
+      const response = await fetch(`https://better-worlds-dance.loca.lt/spares/list/?price_by=${Number(price_by_value)}&price_up=${Number(price_up_value)}`, {
+        method: 'GET',
+        mode: 'cors'
+      });
+      // return await response.json();
+      const text = await response.text();
+
+      const data = JSON.parse(text);
+      return data;
     } 
     catch(error) {
       const filteredData = MOCK_DATA_SPARES.Spares.filter(spare => 
@@ -34,8 +42,17 @@ export const getSpareByID = async (
   Promise<MySpares> => {
 
     try {
-      const response = await fetch(`/api/spares/${id_spare}/info/`);
-      return await response.json();
+      const response = await fetch(`https://better-worlds-dance.loca.lt/spares/${id_spare}/info/`, {
+        method: 'GET',
+        mode: 'cors'
+      });
+      // return await response.json();
+      const text = await response.text();
+      console.log('Response Text:', text);
+
+      const data = JSON.parse(text);
+      console.log(data)
+      return data;
     } 
     catch(error) {
       return MOCK_DATA_SPARES.Spares[Number(id_spare) - 1]
