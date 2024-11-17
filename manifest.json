@@ -1,10 +1,10 @@
 {
     "name": "World spares",
-    "short_name": "Tile Notes",
+    "short_name": "World spares",
     "start_url": "/Jet_spares_front",
     "display": "standalone",
-    "background_color": "#fdfdfd",
-    "theme_color": "#db4938",
+    "background_color": "#1a1a1a",
+    "theme_color": "#1a1a1a",
     "orientation": "portrait-primary",
     "icons": [
       {
