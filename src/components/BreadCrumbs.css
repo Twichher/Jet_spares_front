@@ -12,9 +12,8 @@
   margin: 0;
   margin-top: auto;
   margin-bottom: auto;
-  font-size: 28px;
+  font-size: 25px;
   font-weight: bold;
-  margin-left: 20px;
   align-items: center;
 }
 
@@ -42,4 +41,26 @@
 
 .breadcrumbs li a:hover {
   color: var(--active_color); /* При наведении пройденные страницы становятся активного цвета */
+}
+
+@media (max-width: 850px) {
+  .breadcrumbs {
+    flex-wrap: wrap; /* Позволяет переносить строки */
+    justify-content: center; /* Центрируем текст */
+    width: 65%; /* Ширина списка на всю доступную область */
+  }
+
+  .breadcrumbs li {
+     /* Ограничение ширины каждого блока */
+    word-wrap: break-word; /* Разрешает переносить длинные слова */
+    overflow-wrap: break-word; /* Альтернативное свойство для переносов */
+    text-align: center; /* Центрируем текст внутри блока */
+  }
+
+  .breadcrumbs li a {
+    display: inline-block; /* Делаем текст ссылок блочным для переноса */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
 }

@@ -19,19 +19,34 @@ export const MainPageSpares = () => {
     const [spares, SetSpare] = useState<MySpares[]>([])
     const navigate = useNavigate();
 
+    const [loading, setLoading] = useState(true)
+
 
     useEffect( () => {
-        getSpareByPrice(price_by, price_up).then((test) => {
-            SetSpare(test.Spares);
-        });
-        console.log(spares)
+        setLoading(true)
+
+        getSpareByPrice(price_by, price_up)
+            .then((test) => {
+                SetSpare(test.Spares);
+            })
+            .finally(() => {
+                setLoading(false); 
+            });
+
       }, [] )
 
     const onSubmitFinderHandler = () => {
 
-        getSpareByPrice(price_by, price_up).then((test) => {
-            SetSpare(test.Spares);
-        });
+        setLoading(true)
+
+        getSpareByPrice(price_by, price_up)
+            .then((test) => {
+                SetSpare(test.Spares);
+            })
+            .finally(() => {
+                setLoading(false); 
+            });
+
 
     }
 
@@ -65,6 +80,12 @@ export const MainPageSpares = () => {
                         crumbs={[{ label: ROUTE_LABELS.SPARES }]} 
                     />
                 </div>
+
+                {loading && ( 
+                    <div className="loading">
+                        <h1> Loading... </h1>
+                    </div>
+                )}
 
                 <div className="space">
                     <div className="container">

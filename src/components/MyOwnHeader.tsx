@@ -21,6 +21,21 @@ export const MyOwnHeader : FC = () => {
 
         </div>
 
+        <div className='nav__mobile-wrapper' onClick={(event) => event.currentTarget.classList.toggle('active')} >
+            <div className='nav__mobile-target' />
+                <div className='nav__mobile-menu'>
+                    <Link to={ROUTES.HOME}>
+                        <img className="home_icon" src="/Jet_spares_front/home_icon.png" />
+                    </Link>
+
+                    <Link to={ROUTES.SPARES}>
+                        <img className="main_icon" src="/Jet_spares_front/spares_icon.png" />
+                    </Link>
+
+                </div>
+        </div>
+
+
         <div className="title">
             <p className="headText">Мировые запчасти</p>
         </div>

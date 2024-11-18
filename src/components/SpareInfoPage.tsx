@@ -16,12 +16,13 @@ export const SpareInfoPage : FC = () => {
 
     useEffect( () => {
         if (id_spare) {
-            getSpareByID(id_spare).then((test) => {
-                setSpareInfo(test);
-            });
-        }
 
-        { id_spare && console.log(id_spare) }
+            getSpareByID(id_spare)
+                .then((test) => {
+                    setSpareInfo(test);
+                });
+                
+        }
 
       }, [id_spare] )
 
@@ -64,10 +65,14 @@ export const SpareInfoPage : FC = () => {
                     <p className="desc_spare">{ spareInfo.description_spare }</p>
                 </div>
 
+                <div className="mbotom"/>
+
             </div>
 
         ) : (
-            <h1> No info </h1>
+            <div className="loading">
+                <h1> Loading... </h1>
+            </div>
         )}
   
         </>

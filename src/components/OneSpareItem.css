@@ -1,51 +1,6 @@
-/* .spares_div{
-    width: 100%;
-    height: 300px;
-    border-radius: 20px;
-    background-color: rgba(245, 222, 179, 0.8); 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .spare_pic_div{
-    justify-content: center;
-    display: flex;
-  }
-  
-  .spare_pic{
-    margin-top: 10px;
-    margin-left: auto; 
-    margin-right: auto;
-    width: 100%;
-    height: 150px;
-  }
-  
-  .spare_name_div{
-    justify-content: center;
-    display: flex;
-  }
-  
-  .spare_desc{
-    text-decoration: none;
-    text-align: center;
-    color: #000000;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .spare_price{
-    margin-left: 20px;
-    margin-bottom: 10px;
-    text-align: left; 
-    color: red; 
-    font-size: 20px;
-    font-weight: bold;
-  }
-   */
 
 
-   .spares_div {
+.spares_div {
     width: 85%;
     height: 300px;
     border-radius: 20px;
@@ -55,7 +10,6 @@
     justify-content: space-between;
     padding: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Тень для придания объема */
-    margin: 20pх;
 }
 
 .spare_pic_div {
@@ -99,3 +53,4 @@
     font-weight: bold;
     margin: 0;
 }
+
