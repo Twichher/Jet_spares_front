@@ -8,18 +8,30 @@ import { getSpareByPrice } from "./modules/MyApiSpares";
 import { MySpares } from "./modules/MyInterface";
 import { OneSpareitem } from "./components/OneSpareItem";
 import { MyOwnHeader } from "./components/MyOwnHeader";
+import { useDispatch, useSelector } from 'react-redux';
+import { setPriceBy, setPriceUp } from "./slices/filterSlice";
+import { RootState } from "./slices/sparesRed";
 
 
 
 export const MainPageSpares = () => {
 
-    const [price_by, SBV] = useState('')
-    const [price_up, SUV] = useState('')
+    const dispatch = useDispatch();
+    const price_by = useSelector((state: RootState) => state.filter.price_by);
+    const price_up = useSelector((state: RootState) => state.filter.price_up);
 
     const [spares, SetSpare] = useState<MySpares[]>([])
     const navigate = useNavigate();
 
     const [loading, setLoading] = useState(true)
+
+    const handlePriceByChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(setPriceBy(event.target.value));
+      };
+    
+      const handlePriceUpChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(setPriceUp(event.target.value));
+      };
 
 
     useEffect( () => {
@@ -68,8 +80,8 @@ export const MainPageSpares = () => {
                     <FinderItem 
                         value_by={price_by}
                         value_up={price_up}
-                        setValueby={SBV}
-                        setValueup={SUV}
+                        setValueby={handlePriceByChange}
+                        setValueup={handlePriceUpChange}
                         onSubmit={onSubmitFinderHandler}
                     />
 

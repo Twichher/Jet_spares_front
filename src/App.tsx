@@ -5,19 +5,26 @@ import { MainPageSpares } from './MainPageSpares';
 import { SpareInfoPage } from './components/SpareInfoPage';
 
 
+
 function App() {
 
   return (
-    <BrowserRouter future={{
-      v7_startTransition: true,
-      v7_relativeSplatPath: true,
-    }} basename="/Jet_spares_front">
-    <Routes>
-      <Route path={ROUTES.HOME} index element={<WelcomePage />} />
-      <Route path={ROUTES.SPARES} element={<MainPageSpares />} />
-      <Route path={`${ROUTES.SPARES}/:id_spare`} element={<SpareInfoPage />} />
-    </Routes>
-  </BrowserRouter>
+
+
+
+      <BrowserRouter future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }} basename="/Jet_spares_front">
+
+        <Routes>
+          <Route path={ROUTES.HOME} index element={<WelcomePage />} />
+          <Route path={ROUTES.SPARES} element={<MainPageSpares />} />
+          <Route path={`${ROUTES.SPARES}/:id_spare`} element={<SpareInfoPage />} />
+        </Routes>
+
+      </BrowserRouter>
+
   )
 }
 
