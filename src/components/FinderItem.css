@@ -1,0 +1,169 @@
+
+  .sort_by_price_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    width: 700px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.8); 
+    border-radius: 30px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); 
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    gap: 15px; 
+}
+
+.price_by_text, .price_up_text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e3e3e3;
+    white-space: nowrap;
+}
+
+.input_sort_by, .input_sort_up {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #FFFAFA;
+    outline: none;
+    border: none;
+    padding: 0 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.input_sort_by::placeholder, .input_sort_up::placeholder {
+    font-size: 1rem;
+    color: #a0a0a0; 
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.sort_btn {
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgba(0, 33, 71, 0.9); 
+    outline: none;
+    border: none;
+    color: #87CEEB;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); 
+}
+
+.sort_btn:hover {
+    background-color: rgba(0, 33, 71, 1); 
+    transform: translateY(-2px); 
+}
+
+.sort_btn:active {
+    background-color: rgba(0, 33, 71, 0.8);
+    transform: translateY(0);
+}
+
+.apply_btn {
+  margin-left: auto; 
+  background-color: rgba(0, 33, 71, 0.5); 
+  cursor: not-allowed;
+  color: #555555; 
+}
+
+.apply_btn:disabled {
+  background-color: rgba(0, 33, 71, 0.5);
+  color: #555555;
+}
+
+.sort_by_price_div_mobile{
+    display: none;
+}
+
+
+
+@media (max-width: 850px) {
+    .sort_by_price_div {
+        display: none;
+    }
+
+    .sort_by_price_div_mobile {
+        display: flex;
+        flex-direction: column; /* Элементы располагаются вертикально */
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        width: 300px; /* Ширина чуть больше для компактности */
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 10px; /* Уменьшенные скругления */
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Менее заметная тень */
+        padding: 10px; /* Уменьшенные отступы */
+        gap: 5px; /* Меньший разрыв между элементами */
+    }
+
+    .search_text{
+        font-size: 17px; /* Меньший размер текста */
+        font-weight: bold;
+        color: #e3e3e3;
+        text-align: center;
+        margin: 0; /* Убираем дополнительные отступы */
+    }
+
+    .price_by_text,
+    .price_up_text {
+        font-size: 14px; /* Меньший размер текста */
+        font-weight: bold;
+        color: #e3e3e3;
+        text-align: center;
+        margin: 0; /* Убираем дополнительные отступы */
+    }
+
+    .input_sort_by,
+    .input_sort_up {
+        width: 90%; /* Ширина увеличена для адаптации */
+        height: 35px; /* Уменьшенная высота */
+        border-radius: 8px; /* Более компактные поля */
+        background-color: #FFFAFA;
+        outline: none;
+        border: 1px solid rgba(0, 0, 0, 0.2); /* Лёгкая рамка */
+        padding: 0 10px; /* Уменьшенные внутренние отступы */
+        font-size: 14px; /* Меньший размер шрифта */
+        text-align: center;
+    }
+
+    .input_sort_by::placeholder,
+    .input_sort_up::placeholder {
+        font-size: 0.8rem; /* Уменьшенный размер placeholder */
+        color: #a0a0a0;
+    }
+
+    .sort_btn {
+        width: 90%; /* Ширина кнопки увеличена до ширины input */
+        height: 40px; /* Уменьшенная высота */
+        border-radius: 8px; /* Меньшие скругления */
+        background-color: rgba(0, 33, 71, 0.8);
+        margin-top: 5px;
+        color: #87CEEB;
+        font-size: 0.9rem; /* Уменьшенный размер текста */
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Менее заметная тень */
+    }
+
+    .sort_btn:hover {
+        background-color: rgba(0, 33, 71, 1);
+        transform: translateY(-1px);
+    }
+
+    .sort_btn:active {
+        background-color: rgba(0, 33, 71, 0.7);
+        transform: translateY(0);
+    }
+}
