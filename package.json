@@ -5,10 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview --port=4000",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview --host --port=4000"
+
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
