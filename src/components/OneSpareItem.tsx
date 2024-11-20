@@ -10,12 +10,15 @@ interface OneSpareItemTypes {
 export const OneSpareitem : FC<OneSpareItemTypes> = ( {spare, imageClickHandler} : OneSpareItemTypes) => {
 
     let image : string = ''
+    const currentHost = window.location.hostname;
 
     if (spare.url_spare === undefined) {
         image = "no_img_spare.jpg"
     } else {
-        image = spare.url_spare
+        image = spare.url_spare.replace("127.0.0.1", currentHost);
     }
+
+    console.log(image)
 
 
     return (

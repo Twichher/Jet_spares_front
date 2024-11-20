@@ -13,6 +13,7 @@ export const SpareInfoPage : FC = () => {
     const [spareInfo, setSpareInfo] = useState<MySpares>()
     const {id_spare} = useParams()
     let image : string = ''
+    const currentHost = window.location.hostname;
 
     useEffect( () => {
         if (id_spare) {
@@ -27,7 +28,7 @@ export const SpareInfoPage : FC = () => {
       }, [id_spare] )
 
     if (spareInfo?.url_spare === undefined) {image = "../no_img_spare.jpg"}
-    else {image = `${spareInfo.url_spare}`}
+    else {image = spareInfo.url_spare.replace("127.0.0.1", currentHost)}
 
 
     return (
