@@ -12,11 +12,11 @@ export const MyOwnHeader : FC = () => {
         <div className="navi">
 
             <Link to={ROUTES.HOME}>
-                <img className="home_icon" src="/Jet_spares_front/home_icon.png" />
+                <img className="home_icon" src="/home_icon.png" />
             </Link>
 
             <Link to={ROUTES.SPARES}>
-                <img className="main_icon" src="/Jet_spares_front/spares_icon.png" />
+                <img className="main_icon" src="/spares_icon.png" />
             </Link>
 
         </div>
@@ -25,11 +25,11 @@ export const MyOwnHeader : FC = () => {
             <div className='nav__mobile-target' />
                 <div className='nav__mobile-menu'>
                     <Link to={ROUTES.HOME}>
-                        <img className="home_icon" src="/Jet_spares_front/home_icon.png" />
+                        <img className="home_icon" src="/home_icon.png" />
                     </Link>
 
                     <Link to={ROUTES.SPARES}>
-                        <img className="main_icon" src="/Jet_spares_front/spares_icon.png" />
+                        <img className="main_icon" src="/spares_icon.png" />
                     </Link>
 
                 </div>

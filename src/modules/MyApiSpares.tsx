@@ -12,21 +12,15 @@ export const getSpareByPrice = async (
     if (price_by_value === '') price_by_value = '0'
     if (price_up_value === '') price_up_value = '10000002'
 
-    const timeout = 5000; 
-    const controller = new AbortController();
-    const signal = controller.signal;
-  
-    const timeoutId = setTimeout(() => controller.abort(), timeout);
 
 
 //tsc -b && vite build
     try {
 
-      // const response = await fetch(`https://my-local-server.local:8000/spares/list/?price_by=${Number(price_by_value)}&price_up=${Number(price_up_value)}`, {signal});
+      // const response = await fetch(`http://localhost:4173/api/spares/list/?price_by=${Number(price_by_value)}&price_up=${Number(price_up_value)}`, {signal});
 
-      const response = await fetch(`api/spares/list/?price_by=${Number(price_by_value)}&price_up=${Number(price_up_value)}`, {signal});
-
-      clearTimeout(timeoutId);
+      const response = await fetch(`api/spares/list/?price_by=${Number(price_by_value)}&price_up=${Number(price_up_value)}`);
+      // http://192.168.1.5:8000
 
       const text = await response.text();
 
@@ -48,17 +42,9 @@ export const getSpareByID = async (
   ): 
   Promise<MySpares> => {
 
-    const timeout = 5000;
-    const controller = new AbortController();
-    const signal = controller.signal;
-  
-    const timeoutId = setTimeout(() => controller.abort(), timeout);
-
     try {
-      // const response = await fetch(`https://my-local-server.local:8000/spares/${id_spare}/info/`, {signal})
-      const response = await fetch(`api/spares/${id_spare}/info/`, {signal})
-
-      clearTimeout(timeoutId);
+      // const response = await fetch(`http://localhost:4173/api/spares/${id_spare}/info/`, {signal})
+      const response = await fetch(`api/spares/${id_spare}/info/`)
       const text = await response.text();
 
       const data = JSON.parse(text);
