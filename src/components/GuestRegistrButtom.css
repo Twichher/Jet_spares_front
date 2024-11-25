@@ -1,0 +1,55 @@
+.reglogbuttons {
+    display: flex;
+    align-items: center; /* Выравнивание по высоте */
+    justify-content: center; /* Центрирование кнопок внутри */
+    gap: 5px; /* Расстояние между кнопками */
+}
+
+
+/* Общий стиль для кнопок */
+button {
+    height: 60px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Лёгкая тень */
+    margin: 10px; /* Пространство между кнопками */
+}
+
+/* Стили для кнопки "Войти" */
+.login_buttom {
+    width: 180px; /* Укороченная ширина */
+    background-color: rgba(0, 0, 0, 0.8); /* Зелёный */
+    color: #87CEEB;
+}
+
+.login_buttom:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Более насыщенный зелёный */
+    transform: translateY(-2px); /* Лёгкий подъём */
+}
+
+.login_buttom:active {
+    background-color: rgba(0, 0, 0, 0.8); /* Светлее при нажатии */
+    transform: translateY(0); /* Убираем подъём */
+}
+
+/* Стили для кнопки "Зарегистрироваться" */
+.reg_buttom {
+    width: 180px; /* Увеличенная ширина */
+    background-color: rgba(0, 0, 0, 0.8); /* Яркий синий */
+    color: #87CEEB;
+}
+
+.reg_buttom:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Более насыщенный синий */
+    transform: translateY(-2px); /* Лёгкий подъём */
+}
+
+.reg_buttom:active {
+    background-color: rgba(0, 0, 0, 0.8); /* Светлее при нажатии */
+    transform: translateY(0); /* Убираем подъём */
+}

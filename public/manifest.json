@@ -1,0 +1,15 @@
+{
+    "name": "World spares",
+    "short_name": "World spares",
+    "start_url": "/Jet_spares_front",
+    "display": "standalone",
+    "background_color": "#1a1a1a",
+    "theme_color": "#1a1a1a",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "/Jet_spares_front/home_icon.png",
+        "type": "image/png", "sizes": "256x256"
+      }
+    ]
+  }
