@@ -3,7 +3,9 @@ export const ROUTES = {
     SPARES: "/spares",
     REG: "/register",
     LOG: "/login",
-    ORDER: "/order"
+    ORDER: "/order",
+    USER: "/private",
+    USERINFO: "/changeinfo"
   }
   export type RouteKeyType = keyof typeof ROUTES;
   export const ROUTE_LABELS: {[key in RouteKeyType]: string} = {
@@ -11,5 +13,7 @@ export const ROUTES = {
     SPARES: "Запчасти",
     REG: "Регистрация",
     LOG: "Вход",
-    ORDER: "Заказ"
+    ORDER: "Заказ",
+    USER: "Покупатель",
+    USERINFO: "Изменение информации"
   };

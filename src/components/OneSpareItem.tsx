@@ -21,6 +21,10 @@ export const OneSpareitem : FC<OneSpareItemTypes> = ( {spare, imageClickHandler,
       (state: RootState) => state.item.addedItems[spare.id_spare] || false
     );
 
+    const cookie = useSelector(
+        (state: RootState) => state.cookie.cookie
+      );
+
     if (spare.url_spare === undefined) {
         image = "no_img_spare.jpg"
     } else {
@@ -48,7 +52,7 @@ export const OneSpareitem : FC<OneSpareItemTypes> = ( {spare, imageClickHandler,
             </div>
             <div className="spare_price_div">
                 <p className="spare_price">{ Number(spare.price_spare) } ₽</p>
-                { !isAdded && <button className="buy_btn" onClick={clickAdd}>Купить</button>}
+                { cookie && !isAdded && <button className="buy_btn" onClick={clickAdd}>Купить</button>}
                 { isAdded && <button className="buy_btn disabled" disabled>Добавлено</button>}
             </div>
 

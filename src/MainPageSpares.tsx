@@ -14,7 +14,7 @@ import { RootState } from "./slices/sparesRed";
 import { api } from "./api";
 import { GuestRegistrButtom } from "./components/GuestRegistrButtom";
 import { ProfileOrder } from "./components/profileOrder";
-import { addSpare } from "./slices/orderSlice";
+import { addSpare, setSpares } from "./slices/orderSlice";
 
 
 export const MainPageSpares = () => {
@@ -33,6 +33,7 @@ export const MainPageSpares = () => {
     const [loading, setLoading] = useState(true)
 
     const idOrder = useSelector((state: RootState) => state.order.idOrder);
+
 
     const handlePriceByChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(setPriceBy(event.target.value));
@@ -77,8 +78,9 @@ export const MainPageSpares = () => {
     }
 
 
-    const buttonProfileHandler = () => {
-        console.log("Profile")
+    const buttonProfileHandler = (idUser : string) => {
+        console.log(idUser)
+        navigate(`${ROUTES.USER}/${idUser}`);
     } 
 
     const buttonOrderHandler = (id_order : number) => {
@@ -87,7 +89,10 @@ export const MainPageSpares = () => {
 
     const buybtnClickHandler = (id_spare : number) => {
         api.spares.sparesToOrderCreate(String(id_spare))
-            .then((res) => console.log(res))
+            .then(() => {
+                dispatch(setSpares({id_spare : id_spare, count : 1}))
+                console.log(id_spare)
+            })
             .catch((err) => console.log(err));
 
         dispatch(addSpare())

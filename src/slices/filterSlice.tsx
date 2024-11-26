@@ -22,12 +22,17 @@ const filterSlice = createSlice(
 
             setPriceUp : (state, action : PayloadAction<string>) => {
                 state.price_up = action.payload
+            },
+
+            delFilter : (state) => {
+                state.price_by = ''
+                state.price_up = ''
             }
 
         }
     }
 );
 
-export const { setPriceBy, setPriceUp } = filterSlice.actions;
+export const { setPriceBy, setPriceUp, delFilter } = filterSlice.actions;
 
 export default filterSlice.reducer;

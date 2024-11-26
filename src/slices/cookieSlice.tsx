@@ -11,11 +11,13 @@ const getCookie = (): string | null => {
 
 interface CookieState {
     cookie: string | null; 
+    id_user: number | null
   }
   
   // Начальное состояние
   const initialState: CookieState = {
     cookie: getCookie(),
+    id_user: null
   };
 
 const cookieSlice = createSlice (
@@ -24,6 +26,10 @@ const cookieSlice = createSlice (
     name: "cookie",
     initialState, 
     reducers: {
+
+      setIdUserR : (state, action : PayloadAction<number>) => {
+        state.id_user = action.payload
+      },
 
       setCookie : (state, action : PayloadAction<string> ) => {
         state.cookie = action.payload;
@@ -38,5 +44,5 @@ const cookieSlice = createSlice (
   }
 )
 
-export const {setCookie, delCookie} = cookieSlice.actions;
+export const {setCookie, delCookie, setIdUserR} = cookieSlice.actions;
 export default cookieSlice.reducer;

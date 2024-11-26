@@ -29,24 +29,27 @@ export const LoginPage : FC = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         api.user.userLoginCreate(formData)
-        .then (() => {
-          const cookies = document.cookie.split(";").find((row) => row.startsWith("session_id="));
-          if (cookies) {
-            const sessionId = cookies.split("=")[1];
-            dispatch(setCookie(sessionId));
-
-          } else {
-            setError(true)
-          }
-
-          console.log(cookies)
-
-          navigate(ROUTES.SPARES)
-
-        })
         .catch ((err) => {console.log(err)
-                        setError(true)
+          setError(true)
         })
+        .then ((data) => {
+          const mess = String(data.data["status"])
+          if (mess.includes("успешно")) {
+            console.log("heeeelllloo")
+            const cookies = document.cookie.split(";").find((row) => row.startsWith("session_id="));
+            if (cookies) {
+              const sessionId = cookies.split("=")[1];
+              dispatch(setCookie(sessionId));
+              navigate(ROUTES.SPARES)
+            }
+          } else {
+              console.log("heeeelllloo11111")
+              setError(true)
+            }
+          }
+        )
+          // if (String(data["data"].split(' ')[1]) === "'error',") {
+          //   setError(true)
     }
 
 

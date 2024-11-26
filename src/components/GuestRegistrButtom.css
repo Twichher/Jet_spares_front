@@ -53,3 +53,15 @@ button {
     background-color: rgba(0, 0, 0, 0.8); /* Светлее при нажатии */
     transform: translateY(0); /* Убираем подъём */
 }
+
+
+.reg_buttom.disabled {
+    background-color: #555; /* Серый фон для неактивной кнопки */
+    color: #aaa; /* Светло-серый текст */
+    cursor: not-allowed;
+  }
+  
+  .reg_buttom.disabled:hover {
+    transform: none;
+    background-color: #555; /* Убираем эффект наведения */
+  }

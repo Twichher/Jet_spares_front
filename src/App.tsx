@@ -8,6 +8,8 @@ import { invoke } from "@tauri-apps/api/core";
 import { RegistrationPage } from './components/RegistrationPage';
 import { LoginPage } from './components/LoginPage';
 import { OrderPage } from './components/OrderPage';
+import { PrivateUser } from './components/privateUser';
+import { ChangeInfo } from './components/changeInfo';
 import.meta.env.VITE_DEVELOPER_MINDSET;
 
 
@@ -37,6 +39,8 @@ function App() {
           <Route path={ROUTES.REG} element={<RegistrationPage />} />
           <Route path={ROUTES.LOG} element={<LoginPage />} />
           <Route path={`${ROUTES.ORDER}/:id_order`} element={<OrderPage />} />
+          <Route path={`${ROUTES.USER}/:id_user`} element={<PrivateUser />} />
+          <Route path={`${ROUTES.USERINFO}/:id_user`} element={<ChangeInfo />} />
         </Routes>
 
       </BrowserRouter>
