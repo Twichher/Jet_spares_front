@@ -1,0 +1,62 @@
+.AllOrder {
+    font-family: Arial, sans-serif;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .AllOrder h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+  }
+  
+  .OrderCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .OrderCard p {
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
+    white-space: nowrap; /* Для предотвращения переноса текста */
+  }
+  
+  .OrderCard button {
+    background-color: #87CEEB;
+    color: black;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .OrderCard button:hover {
+    background-color: #2e7d32;
+  }
+  
+  .OrderCard button:active {
+    transform: scale(0.95);
+  }
+  
+  .OrderCard .info {
+    display: flex;
+    gap: 15px;
+  }
+  

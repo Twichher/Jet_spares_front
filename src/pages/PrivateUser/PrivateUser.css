@@ -1,0 +1,97 @@
+.mainProfileDiv {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .profileTitle {
+    font-size: 2.5rem;
+    text-align: center;
+    border-bottom: 2px solid #87CEEB;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .privateInfo {
+    margin-bottom: 30px;
+  }
+
+  .privateInfo p {
+    font-size: 20px;
+  }
+  
+  .label {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .ordersTitle {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #87CEEB;
+    text-align: center;
+    border-bottom: 1px solid #87CEEB;
+    padding-bottom: 5px;
+  }
+  
+  #orders{
+    background-color: #87CEEB;
+  }
+
+  #orders:hover {
+    background-color: #5ba1c5; /* Темнее при наведении */
+    transform: translateY(-2px);
+  }
+  
+
+  .privateInfo button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Лёгкая тень */
+  }
+  
+  .privateInfo button:first-of-type {
+    background-color: #87CEEB; /* Синий цвет для кнопки "Изменить информацию" */
+  }
+  
+  .privateInfo button:first-of-type:hover {
+    background-color: #5ba1c5; /* Темнее при наведении */
+    transform: translateY(-2px);
+  }
+  
+  .privateInfo button:first-of-type:active {
+    background-color: #5ba1c5; /* Ещё темнее при нажатии */
+    transform: translateY(0);
+  }
+  
+  .privateInfo button:last-of-type {
+    background-color: #87CEEB; /* Красный цвет для кнопки "Выйти" */
+  }
+  
+  .privateInfo button:last-of-type:hover {
+    background-color: #5ba1c5; /* Темнее при наведении */
+    transform: translateY(-2px);
+  }
+  
+  .privateInfo button:last-of-type:active {
+    background-color: #5ba1c5; /* Ещё темнее при нажатии */
+    transform: translateY(0);
+  }
+  
+  .privateInfo button:disabled {
+    background-color: #555; /* Серый для неактивных кнопок */
+    color: #aaa; /* Светло-серый текст */
+    cursor: not-allowed;
+  }
+  
