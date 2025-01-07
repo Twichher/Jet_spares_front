@@ -34,57 +34,27 @@ export const OrdersList = () => {
     const navigate = useNavigate();
 
     const getOrdersInfo = async () => {
-
         try {
-
-            const allOrders = await getOrderListOfUser({})
-            (
-            () => {}, 
-            () => {}, 
+          const allOrders = await getOrderListOfUser({
+            statusFilter: statusFilter !== "" ? parseInt(statusFilter) : undefined,
+            startDateFilter: startDateFilter || undefined,
+            byDateFilter: byDateFilter || undefined,
+          })(
+            () => {},
+            () => {},
             null
-            );
-
-            console.log(allOrders.payload)
-            if (allOrders.payload && "data" in allOrders.payload) {
-                let filteredOrders = allOrders.payload.data;
-          
-                if (statusFilter !== "") {
-                  filteredOrders = filteredOrders.filter(
-                    (order) => order.status_order === parseInt(statusFilter)
-                  );
-                }
-          
-
-                if (startDateFilter !== "" && byDateFilter !== "") {
-                  filteredOrders = filteredOrders.filter(
-                    (order) =>
-                      new Date(startDateFilter) <= new Date(order.d_start) &&
-                      new Date(order.d_start) <= new Date(byDateFilter)
-                  );
-                } else if (startDateFilter !== "") {
-
-                  filteredOrders = filteredOrders.filter(
-                    (order) => new Date(startDateFilter) <= new Date(order.d_start)
-                  );
-                } else if (byDateFilter !== "") {
-
-                  filteredOrders = filteredOrders.filter(
-                    (order) => new Date(order.d_start) <= new Date(byDateFilter)
-                  );
-                }
-          
-
-                SetAllOrders(filteredOrders);
-            }
-
-
-        } catch {
-
-            console.log("Error!")
-
+          );
+      
+          console.log(allOrders.payload);
+      
+          if (allOrders.payload && "data" in allOrders.payload) {
+            SetAllOrders(allOrders.payload.data);
+          }
+        } catch (error) {
+          console.log("Error!", error);
         }
-
-    }
+      };
+      
 
     const getInfoOfOrder = async (id_order : number) => {
 

@@ -61,6 +61,12 @@ export interface ListOfOrders {
     data : getOrderListOfUserType[]
 }
 
+export interface ListOfOrdersParams {
+    find_d_form_by: string;
+    find_d_form_up: string;
+    find_status: string;
+}
+
 export interface setOrderInfoType {
     id: string;
     data: JetOrderInfo;
@@ -300,30 +306,35 @@ export const userRegistration = createAsyncThunk<
 //// фанки для заказов (orders)
 
 export const getOrderListOfUser = createAsyncThunk<
-    ListOfOrders,
-    any,
-    { rejectValue: ApiError }
+  ListOfOrders,
+  { statusFilter?: number; startDateFilter?: string; byDateFilter?: string },
+  { rejectValue: ApiError }
 >(
-    "orders/getListOrders",
-    async ({ rejectWithValue }) => {
-      try {
+  "orders/getListOrders",
+  async ({ statusFilter, startDateFilter, byDateFilter }, { rejectWithValue }) => {
+    try {
 
+      const response = await api.orders.ordersListList({
+        find_status: statusFilter,
+        find_d_form_by: startDateFilter,
+        find_d_form_up: byDateFilter,
+      }) as unknown as AxiosResponse<getOrderListOfUserType[]>;
 
-        const response = await api.orders.ordersListList() as unknown as AxiosResponse<getOrderListOfUserType[]>;
+      const sortedData: ListOfOrders = {
+        data: response.data.sort((a, b) => a.id_order - b.id_order),
+      };
 
-        const sortedData: ListOfOrders = {
-            data: response.data.sort((a, b) => a.id_order - b.id_order),
-          };
-    
-        return sortedData;
-
-      } catch (error: any) {
-        return rejectWithValue({
-          message: error.response?.data?.message || error.message || "Ошибка получения данных",
-        });
-      }
+      return sortedData;
+    } catch (error: any) {
+      return rejectWithValue({
+        message: error.response?.data?.message || error.message || "Ошибка получения данных",
+      });
     }
-)
+  }
+);
+
+
+
 
 export const setOrderInfo = createAsyncThunk<
     JetOrderInfo,

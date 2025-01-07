@@ -338,13 +338,15 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @request GET:/orders/list/
      * @secure
      */
-    ordersListList: (params: RequestParams = {}) =>
+    ordersListList: (query?: { find_status?: number; find_d_form_by?: string; find_d_form_up?: string }, params: RequestParams = {}) =>
       this.request<void, any>({
         path: `/orders/list/`,
         method: "GET",
         secure: true,
+        query,
         ...params,
       }),
+    
 
     /**
      * No description
